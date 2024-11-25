@@ -1,0 +1,16 @@
+/*左侧导航栏样式*/
+.aside .el-menu {
+    height: 100vh;
+}
+
+/*字体图标样式*/
+.aside i {
+    font-size: 24px;
+    font-weight: 500;
+    margin-right: 5px;
+}
+
+.aside .el-radio-button__inner {
+    border: none;
+    font-size: 20px;
+}
