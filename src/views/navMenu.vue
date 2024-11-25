@@ -5,20 +5,21 @@ import {
     Menu as IconMenu,
     Location,
     Setting,
+    Avatar,
+    StarFilled,
 } from '@element-plus/icons-vue'
-
 
 const isCollapse = ref(true)
 
 let asidelist = ref([
-    { id: 1, title: '酒店' },
-    { id: 2, title: '机票' },
-    { id: 3, title: '火车票' },
-    { id: 4, title: '旅游' },
-    { id: 5, title: '景点' },
-    { id: 6, title: '汽车票' },
-    { id: 7, title: '船票' },
-    { id: 8, title: '门票' },
+    { id: 1, title: '酒店', icon: StarFilled },
+    { id: 2, title: '机票', icon: Location },
+    { id: 3, title: '火车票', icon: Avatar },
+    { id: 4, title: '旅游', icon: Location },
+    { id: 5, title: '景点', icon: Document },
+    { id: 6, title: '汽车票', icon: Setting },
+    { id: 7, title: '船票', icon: Document },
+    { id: 8, title: '门票', icon: Document },
 
 ])
 
@@ -33,7 +34,9 @@ let asidelist = ref([
                 <el-radio-button :value="true" v-show="!isCollapse">|||</el-radio-button>
             </el-radio-group>
             <el-menu-item index="v.id" v-for="v in asidelist" :key="v.id">
-                <el-icon><icon-menu /></el-icon>
+                <el-icon>
+                    <component :is="v.icon"></component>
+                </el-icon>
                 <template #title>{{ v.title }}</template>
             </el-menu-item>
 
